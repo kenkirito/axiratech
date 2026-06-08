@@ -11,14 +11,21 @@ export default function Home() {
       <div className="container">
         <div className="nav-inner">
           <a href="#" className="logo"><span>/</span>AxiraTech</a>
-          <ul className="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#techstack">Tech Stack</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <a href="#contact" className="nav-cta">Start a Project</a>
+          <button className="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className="nav-menu" id="nav-menu">
+            <ul className="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#techstack">Tech Stack</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" className="nav-cta">Start a Project</a>
+          </div>
         </div>
       </div>
     </nav>

@@ -421,6 +421,32 @@ export default function ClientInteractions() {
     }, { threshold: .4 });
     sections.forEach(s => sio.observe(s));
 
+    // ──────────────── MOBILE MENU ────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinksList = document.querySelectorAll('#nav-menu a');
+    
+    const toggleMenu = () => {
+      if (hamburger && navMenu) {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      }
+    };
+    
+    const closeMenu = () => {
+      if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    };
+
+    if (hamburger) {
+      hamburger.addEventListener('click', toggleMenu);
+    }
+    navLinksList.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
     // ──────────────── CLEANUP ────────────────
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
